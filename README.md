@@ -1,10 +1,10 @@
-# Vulnerability Assessment & Penetration Testing Automation
+﻿# Vulnerability Assessment & Penetration Testing Automation
 
-## 📝 Description
+## ðŸ“ Description
 An AI-assisted security analysis project that uses LangGraph orchestration to run OWASP Top 10:2025 vulnerability assessments on source code repositories. It generates a consolidated PDF report and can push findings back to your repository workflow.
 
 
-## 🎯 Use Cases
+## ðŸŽ¯ Use Cases
 
 - **DevSecOps Integration**: Automate security audits in CI/CD pipelines
 - **Code Review Assistance**: Quick vulnerability assessment before production deployment
@@ -15,7 +15,7 @@ An AI-assisted security analysis project that uses LangGraph orchestration to ru
 
 ---
 
-## ⚙️ Tech Stack
+## âš™ï¸ Tech Stack
 
 ### Backend & Framework
 - **FastAPI** - Modern web framework for REST API
@@ -43,7 +43,7 @@ An AI-assisted security analysis project that uses LangGraph orchestration to ru
 
 ---
 
-## 🖥️ Web Interface Preview
+## ðŸ–¥ï¸ Web Interface Preview
 
 ### User Interface
 
@@ -81,7 +81,7 @@ The VAPT tool features a clean, professional web interface designed for simplici
 
 ---
 
-## 🏗️ Architecture
+## ðŸ—ï¸ Architecture
 
 ### System Flow Diagram
 
@@ -98,31 +98,31 @@ diagram pic here to add
 
 ---
 
-## 📂 Project Structure
+## ðŸ“‚ Project Structure
 
 ```
 gaurav_vapt/
-│
-├── graph.py                      # Main LangGraph workflow orchestration
-├── langgraph.json                # LangGraph configuration
-├── requirements.txt              # Python dependencies
-│
-├── utils/                        # Core utility modules
-│   ├── __init__.py
-│   ├── Agentschema.py           # VAPTState TypedDict schema
-│   ├── Clonning.py              # Repository cloning with OAuth
-│   ├── Nodes.py                 # 10 OWASP vulnerability analysis nodes
-│   ├── Push.py                  # Git push to vapt_report branch
-│   ├── Reportgen.py             # PDF report generation
-│   ├── Structfile.py            # Repository structure analyzer
-│   └── Tools.py                 # LangChain tools for file & code analysis
-│
-├── webui_fastapi/               # Web interface
-│   ├── main.py                  # FastAPI application
-│   ├── index.html               # Frontend UI
-│
-├── .gitignore                   # Git ignore rules
-└── README.md                    # This file
+â”‚
+â”œâ”€â”€ graph.py                      # Main LangGraph workflow orchestration
+â”œâ”€â”€ langgraph.json                # LangGraph configuration
+â”œâ”€â”€ requirements.txt              # Python dependencies
+â”‚
+â”œâ”€â”€ utils/                        # Core utility modules
+â”‚   â”œâ”€â”€ __init__.py
+â”‚   â”œâ”€â”€ Agentschema.py           # VAPTState TypedDict schema
+â”‚   â”œâ”€â”€ Clonning.py              # Repository cloning with OAuth
+â”‚   â”œâ”€â”€ Nodes.py                 # 10 OWASP vulnerability analysis nodes
+â”‚   â”œâ”€â”€ Push.py                  # Git push to vapt_report branch
+â”‚   â”œâ”€â”€ Reportgen.py             # PDF report generation
+â”‚   â”œâ”€â”€ Structfile.py            # Repository structure analyzer
+â”‚   â””â”€â”€ Tools.py                 # LangChain tools for file & code analysis
+â”‚
+â”œâ”€â”€ webui_fastapi/               # Web interface
+â”‚   â”œâ”€â”€ main.py                  # FastAPI application
+â”‚   â”œâ”€â”€ index.html               # Frontend UI
+â”‚
+â”œâ”€â”€ .gitignore                   # Git ignore rules
+â””â”€â”€ README.md                    # This file
 ```
 
 ### Generated Runtime Files (Not in Git)
@@ -135,7 +135,7 @@ VAPT_Final_Report.pdf            # Final consolidated report
 
 ---
 
-## 🚀 Installation & Setup
+## ðŸš€ Installation & Setup
 
 ### Prerequisites
 - **Python 3.12+**
@@ -224,7 +224,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
 To enable LangSmith tracing, change to `"true"` or load from `.env`.
 
-## 🎮 How to Run
+## ðŸŽ® How to Run
 
 ### Method 1: Web UI (Recommended)
 
@@ -273,9 +273,9 @@ python graph.py
 
 ---
 
-## ✨ Features
+## âœ¨ Features
 
-### 🔍 Comprehensive OWASP Top 10 Coverage
+### ðŸ” Comprehensive OWASP Top 10 Coverage
 - **v1: Broken Access Control** - Privilege escalation, IDOR, unprotected routes
 - **v2: Security Misconfiguration** - Default credentials, debug mode, weak headers
 - **v3: Supply Chain Failures** - Vulnerable dependencies, outdated libraries
@@ -287,30 +287,30 @@ python graph.py
 - **v9: Logging & Alerting Failures** - Missing audit logs, log injection
 - **v10: Exception Mishandling** - Information leakage, fail-open logic
 
-### 🤖 AI-Powered Analysis
+### ðŸ¤– AI-Powered Analysis
 - **LLM-Driven Code Review**: Uses Ollama's `gpt-oss:20b` model for intelligent analysis
 - **Context-Aware Detection**: Understands code patterns beyond simple regex matching
 - **Actionable Remediation**: Provides secure code fixes with explanations
 
-### 📊 Professional Reporting
+### ðŸ“Š Professional Reporting
 - **PDF Generation**: Clean, structured vulnerability reports
 - **Severity Scoring**: 0-10 scale with Low/Medium/High/Critical ratings
 - **Code Snippets**: Exact vulnerable code locations with line numbers
 - **Technical Descriptions**: Clear explanations of security implications
 
-### 🔄 Automated Workflow
+### ðŸ”„ Automated Workflow
 - **One-Click Analysis**: Simple web form submission
 - **Git Integration**: Automatic cloning and report push
 - **Stateful Orchestration**: LangGraph manages complex multi-step workflow
 - **Error Handling**: Graceful failure recovery and user notifications
 
-### 🛠️ Developer-Friendly
+### ðŸ› ï¸ Developer-Friendly
 - **FastAPI REST API**: Easy integration with CI/CD pipelines
 - **Minimal Dependencies**: Lightweight tech stack
 - **Customizable Agents**: Easily extend or modify analysis nodes
 - **LangSmith Support**: Optional observability for debugging
 
-### 🔐 Security & Privacy
+### ðŸ” Security & Privacy
 - **Local LLM**: Code analysis happens on your infrastructure (Ollama)
 - **No Data Leakage**: Repository data never sent to external APIs
 - **Token Security**: Access tokens used only for Git operations
@@ -318,7 +318,7 @@ python graph.py
 
 ---
 
-## 🔧 Configuration
+## ðŸ”§ Configuration
 
 ### Customizing Ollama Model
 Edit `utils/Nodes.py` and `utils/Tools.py`:
@@ -349,7 +349,7 @@ initial_state = {
 
 ---
 
-## 📘 API Documentation
+## ðŸ“˜ API Documentation
 
 ### REST API Endpoint
 
@@ -407,13 +407,13 @@ Downloads the generated PDF report returned in `report_url`.
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 
 This project is licensed under the MIT License. 
 
 ---
 
-## 🎯 End Note
+## ðŸŽ¯ End Note
 
 **AI-Powered VAPT Tool** represents a modern approach to automated security analysis, combining the power of Large Language Models with established security principles. By leveraging local LLM inference through Ollama, this tool ensures your code never leaves your infrastructure while still benefiting from advanced AI-driven vulnerability detection.
 
@@ -421,14 +421,13 @@ Whether you're a solo developer looking to improve code security, a security pro
 
 **Remember:** Automated tools complement but don't replace human security expertise. Always review findings critically and conduct thorough manual testing for production systems.
 
-Stay secure! 🛡️
+Stay secure! ðŸ›¡ï¸
 
 ---
 
-**⭐ Star this repository if you find it useful!**
+**â­ Star this repository if you find it useful!**
 
-**🔄 Keep your dependencies updated and scan regularly!**
+**ðŸ”„ Keep your dependencies updated and scan regularly!**
 
-**🚀 Happy Secure Coding!**
-#   v a p t _ a u t o m a t i o n  
- 
+**ðŸš€ Happy Secure Coding!**
+
