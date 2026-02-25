@@ -49,6 +49,8 @@ An AI-assisted security analysis project that uses LangGraph orchestration to ru
 
 The VAPT tool features a clean, professional web interface designed for simplicity and efficiency. The single-page application provides an intuitive form-based approach to submit repository analysis requests.
 
+<img width="1152" height="820" alt="Screenshot 2026-02-24 220248" src="https://github.com/user-attachments/assets/e168dbd5-e9ba-478f-b80b-e1041f2b8dcb" />
+
 **Key UI Features:**
 - Minimal and modern single-page design
 - Responsive layout for all device sizes
@@ -56,11 +58,6 @@ The VAPT tool features a clean, professional web interface designed for simplici
 - Clear success/error message display
 - Clean professional color scheme
 
-### Screenshot
-
-![Web UI Interface](./assets/ui-screenshot.png)
-
-*Add screenshot of the web interface here*
 
 **UI Components:**
 1. **Header Section** - Application title with security icon
