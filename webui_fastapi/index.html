@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAPT Scanner</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: #eef0f3;
+      color: #102a4c;
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 56px 16px;
+    }
+
+    .panel {
+      width: 100%;
+      max-width: 680px;
+      background: #f5f6f8;
+      border: 1px solid #d6dae2;
+      border-radius: 16px;
+      padding: 28px 30px;
+      box-shadow: 0 2px 6px rgba(23, 35, 58, 0.06);
+    }
+
+    h1 {
+      margin: 0;
+      font-size: 34px;
+      line-height: 1.1;
+      color: #122c4d;
+    }
+
+    .subtitle {
+      margin: 10px 0 22px;
+      font-size: 16px;
+      line-height: 1.25;
+      color: #5d6e86;
+      max-width: 670px;
+    }
+
+    form {
+      margin-top: 10px;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px 14px;
+      border: 2px solid #d3d9e2;
+      border-radius: 10px;
+      font-size: 16px;
+      color: #3a4f6d;
+      background: #f9fafc;
+      outline: none;
+    }
+
+    input:focus {
+      border-color: #5c7cf0;
+      box-shadow: 0 0 0 2px rgba(92, 124, 240, 0.18);
+    }
+
+    button {
+      margin-top: 18px;
+      width: 100%;
+      background: #2a50cf;
+      color: #ffffff;
+      border: none;
+      padding: 13px 16px;
+      border-radius: 10px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+
+    button:disabled {
+      background: #97acee;
+      cursor: not-allowed;
+    }
+
+    label {
+      display: block;
+      margin: 16px 0 8px;
+      font-size: 15px;
+      font-weight: 700;
+      color: #112b4a;
+    }
+
+    .status-box {
+      margin-top: 14px;
+    }
+
+    #statusMessage {
+      margin: 0;
+      font-size: 15px;
+      color: #2f4868;
+    }
+
+    #downloadLink {
+      display: inline-block;
+      margin-top: 10px;
+      color: #1f4ed0;
+      font-size: 16px;
+      text-decoration: none;
+    }
+
+    #statusCard[hidden] {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .panel {
+        padding: 26px 20px;
+        border-radius: 12px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      input,
+      button,
+      #statusMessage,
+      #downloadLink {
+        font-size: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="panel">
+      <h1>VAPT Report Generator</h1>
+      <p class="subtitle">Enter repository details to generate a vulnerability assessment report.</p>
+
+      <form id="scanForm">
+        <label for="repo_url">Repository URL</label>
+        <input id="repo_url" name="repo_url" type="url" placeholder="https://github.com/username/repo" required />
+
+        <label for="branch_name">Branch Name</label>
+        <input id="branch_name" name="branch_name" type="text" placeholder="main" value="main" />
+
+        <label for="access_token">Access Token</label>
+        <input id="access_token" name="access_token" type="password" placeholder="Enter your access token" />
+
+        <button type="submit" id="startBtn">Perform VAPT</button>
+      </form>
+
+      <section class="status-box" id="statusCard" hidden>
+        <p id="statusMessage">Ready to run analysis.</p>
+        <a id="downloadLink" href="#" hidden>Download Report</a>
+      </section>
+    </section>
+  </main>
+
+  <script>
+    const form = document.getElementById('scanForm');
+    const startBtn = document.getElementById('startBtn');
+    const statusCard = document.getElementById('statusCard');
+    const statusMessageEl = document.getElementById('statusMessage');
+    const downloadLink = document.getElementById('downloadLink');
+
+    function setStatus(message) {
+      statusCard.hidden = false;
+      statusMessageEl.textContent = message;
+    }
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      downloadLink.hidden = true;
+      downloadLink.href = '#';
+      setStatus('VAPT analysis in progress...');
+      startBtn.disabled = true;
+
+      const payload = {
+        repo_url: document.getElementById('repo_url').value.trim(),
+        branch_name: document.getElementById('branch_name').value.trim() || 'main',
+        access_token: document.getElementById('access_token').value.trim(),
+      };
+
+      try {
+        const response = await fetch('/perform', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        const data = await response.json();
+        const isSuccess = (data.status || '').toLowerCase() === 'success';
+        setStatus(data.message || (isSuccess ? 'VAPT analysis completed.' : 'VAPT analysis failed.'));
+
+        if (isSuccess && data.report_url) {
+          downloadLink.href = data.report_url;
+          downloadLink.hidden = false;
+        }
+      } catch (error) {
+        setStatus('VAPT analysis could not be completed.');
+      } finally {
+        startBtn.disabled = false;
+      }
+    });
+  </script>
+</body>
+</html>

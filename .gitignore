@@ -1,0 +1,26 @@
+# Python artifacts
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment files
+.env
+
+# Generated runtime files
+cloned_code/
+Node_results/
+repo_structure.txt
+VAPT_Final_Report.pdf
+reports/
+runs/
+repo_structures/
+
+# OS/editor
+.DS_Store
+Thumbs.db
+.vscode/
