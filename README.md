@@ -1,10 +1,10 @@
 ﻿# Vulnerability Assessment & Penetration Testing Automation
 
-## ðŸ“ Description
+## Description
 An AI-assisted security analysis project that uses LangGraph orchestration to run OWASP Top 10:2025 vulnerability assessments on source code repositories. It generates a consolidated PDF report and can push findings back to your repository workflow.
 
 
-## ðŸŽ¯ Use Cases
+## Use Cases
 
 - **DevSecOps Integration**: Automate security audits in CI/CD pipelines
 - **Code Review Assistance**: Quick vulnerability assessment before production deployment
@@ -15,7 +15,7 @@ An AI-assisted security analysis project that uses LangGraph orchestration to ru
 
 ---
 
-## âš™ï¸ Tech Stack
+## Tech Stack
 
 ### Backend & Framework
 - **FastAPI** - Modern web framework for REST API
@@ -43,7 +43,7 @@ An AI-assisted security analysis project that uses LangGraph orchestration to ru
 
 ---
 
-## ðŸ–¥ï¸ Web Interface Preview
+## Web Interface Preview
 
 ### User Interface
 
@@ -81,11 +81,11 @@ The VAPT tool features a clean, professional web interface designed for simplici
 
 ---
 
-## ðŸ—ï¸ Architecture
-
+## Architecture
 ### System Flow Diagram
 
-diagram pic here to add
+<img width="777" height="743" alt="Screenshot 2026-02-25 205225" src="https://github.com/user-attachments/assets/aa473413-1113-4e07-baa3-c6b4f3973a70" />
+
 
 ### Component Interaction
 1. **User Interface**: Web form for repository submission
@@ -98,7 +98,7 @@ diagram pic here to add
 
 ---
 
-## ðŸ“‚ Project Structure
+## Project Structure
 
 ```
 gaurav_vapt/
@@ -135,7 +135,7 @@ VAPT_Final_Report.pdf            # Final consolidated report
 
 ---
 
-## ðŸš€ Installation & Setup
+## Installation & Setup
 
 ### Prerequisites
 - **Python 3.12+**
@@ -145,7 +145,7 @@ VAPT_Final_Report.pdf            # Final consolidated report
 
 ### Step 1: Clone the Repository
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/gauravbondegit/vapt_automation.git
 cd gaurav_vapt
 ```
 
@@ -224,7 +224,7 @@ os.environ["LANGCHAIN_TRACING_V2"] = "false"
 
 To enable LangSmith tracing, change to `"true"` or load from `.env`.
 
-## ðŸŽ® How to Run
+## How to Run
 
 ### Method 1: Web UI (Recommended)
 
@@ -273,9 +273,9 @@ python graph.py
 
 ---
 
-## âœ¨ Features
+## Features
 
-### ðŸ” Comprehensive OWASP Top 10 Coverage
+### Comprehensive OWASP Top 10 Coverage
 - **v1: Broken Access Control** - Privilege escalation, IDOR, unprotected routes
 - **v2: Security Misconfiguration** - Default credentials, debug mode, weak headers
 - **v3: Supply Chain Failures** - Vulnerable dependencies, outdated libraries
@@ -287,30 +287,30 @@ python graph.py
 - **v9: Logging & Alerting Failures** - Missing audit logs, log injection
 - **v10: Exception Mishandling** - Information leakage, fail-open logic
 
-### ðŸ¤– AI-Powered Analysis
+### AI-Powered Analysis
 - **LLM-Driven Code Review**: Uses Ollama's `gpt-oss:20b` model for intelligent analysis
 - **Context-Aware Detection**: Understands code patterns beyond simple regex matching
 - **Actionable Remediation**: Provides secure code fixes with explanations
 
-### ðŸ“Š Professional Reporting
+### Professional Reporting
 - **PDF Generation**: Clean, structured vulnerability reports
 - **Severity Scoring**: 0-10 scale with Low/Medium/High/Critical ratings
 - **Code Snippets**: Exact vulnerable code locations with line numbers
 - **Technical Descriptions**: Clear explanations of security implications
 
-### ðŸ”„ Automated Workflow
+### Automated Workflow
 - **One-Click Analysis**: Simple web form submission
 - **Git Integration**: Automatic cloning and report push
 - **Stateful Orchestration**: LangGraph manages complex multi-step workflow
 - **Error Handling**: Graceful failure recovery and user notifications
 
-### ðŸ› ï¸ Developer-Friendly
+### Developer-Friendly
 - **FastAPI REST API**: Easy integration with CI/CD pipelines
 - **Minimal Dependencies**: Lightweight tech stack
 - **Customizable Agents**: Easily extend or modify analysis nodes
 - **LangSmith Support**: Optional observability for debugging
 
-### ðŸ” Security & Privacy
+### Security & Privacy
 - **Local LLM**: Code analysis happens on your infrastructure (Ollama)
 - **No Data Leakage**: Repository data never sent to external APIs
 - **Token Security**: Access tokens used only for Git operations
@@ -318,7 +318,7 @@ python graph.py
 
 ---
 
-## ðŸ”§ Configuration
+## Configuration
 
 ### Customizing Ollama Model
 Edit `utils/Nodes.py` and `utils/Tools.py`:
@@ -349,7 +349,7 @@ initial_state = {
 
 ---
 
-## ðŸ“˜ API Documentation
+## API Documentation
 
 ### REST API Endpoint
 
@@ -407,13 +407,13 @@ Downloads the generated PDF report returned in `report_url`.
 
 ---
 
-## ðŸ“„ License
+## License
 
 This project is licensed under the MIT License. 
 
 ---
 
-## ðŸŽ¯ End Note
+## End Note
 
 **AI-Powered VAPT Tool** represents a modern approach to automated security analysis, combining the power of Large Language Models with established security principles. By leveraging local LLM inference through Ollama, this tool ensures your code never leaves your infrastructure while still benefiting from advanced AI-driven vulnerability detection.
 
