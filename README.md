@@ -1,7 +1,7 @@
 ﻿# Vulnerability Assessment & Penetration Testing Automation
 
 ## Description
-An AI-assisted security analysis project that uses LangGraph orchestration to run OWASP Top 10:2025 vulnerability assessments on source code repositories. It generates a consolidated PDF report and can push findings back to your repository workflow.
+An AI-assisted security analysis project that uses LangGraph orchestration to run OWASP Top 10:2025 (https://owasp.org/Top10/2025/) vulnerability assessments on source code repositories. It generates a consolidated PDF report and can push findings back to your repository workflow.
 
 
 ## Use Cases
