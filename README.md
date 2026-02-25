@@ -409,13 +409,13 @@ Whether you're a solo developer looking to improve code security, a security pro
 
 **Remember:** Automated tools complement but don't replace human security expertise. Always review findings critically and conduct thorough manual testing for production systems.
 
-Stay secure! ðŸ›¡ï¸
+Stay secure! 
 
 ---
 
-**â­ Star this repository if you find it useful!**
+**Star this repository if you find it useful!**
 
-**ðŸ”„ Keep your dependencies updated and scan regularly!**
+**Keep your dependencies updated and scan regularly!**
 
-**ðŸš€ Happy Secure Coding!**
+**Happy Secure Coding!**
 
