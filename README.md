@@ -134,7 +134,7 @@ gaurav_vapt/
 ### Step 1: Clone the Repository
 ```bash
 git clone https://github.com/gauravbondegit/vapt_automation.git
-cd gaurav_vapt
+cd vapt_automation
 ```
 
 ### Step 2: Create Virtual Environment
