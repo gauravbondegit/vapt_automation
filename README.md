@@ -97,37 +97,28 @@ The VAPT tool features a clean, professional web interface designed for simplici
 
 ## Project Structure
 
-```
+```text
 gaurav_vapt/
-â”‚
-â”œâ”€â”€ graph.py                      # Main LangGraph workflow orchestration
-â”œâ”€â”€ langgraph.json                # LangGraph configuration
-â”œâ”€â”€ requirements.txt              # Python dependencies
-â”‚
-â”œâ”€â”€ utils/                        # Core utility modules
-â”‚   â”œâ”€â”€ __init__.py
-â”‚   â”œâ”€â”€ Agentschema.py           # VAPTState TypedDict schema
-â”‚   â”œâ”€â”€ Clonning.py              # Repository cloning with OAuth
-â”‚   â”œâ”€â”€ Nodes.py                 # 10 OWASP vulnerability analysis nodes
-â”‚   â”œâ”€â”€ Push.py                  # Git push to vapt_report branch
-â”‚   â”œâ”€â”€ Reportgen.py             # PDF report generation
-â”‚   â”œâ”€â”€ Structfile.py            # Repository structure analyzer
-â”‚   â””â”€â”€ Tools.py                 # LangChain tools for file & code analysis
-â”‚
-â”œâ”€â”€ webui_fastapi/               # Web interface
-â”‚   â”œâ”€â”€ main.py                  # FastAPI application
-â”‚   â”œâ”€â”€ index.html               # Frontend UI
-â”‚
-â”œâ”€â”€ .gitignore                   # Git ignore rules
-â””â”€â”€ README.md                    # This file
-```
-
-### Generated Runtime Files (Not in Git)
-```
-cloned_code/                     # Cloned repository for analysis
-Node_results/                    # Individual node analysis results (rv1.md - rv10.md)
-repo_structure.txt               # Generated repository structure
-VAPT_Final_Report.pdf            # Final consolidated report
+├── graph.py                      # Main LangGraph workflow orchestration
+├── langgraph.json                # LangGraph configuration
+├── requirements.txt              # Python dependencies
+│
+├── utils/                        # Core utility modules
+│   ├── __init__.py
+│   ├── Agentschema.py            # VAPTState TypedDict schema
+│   ├── Clonning.py               # Repository cloning with OAuth
+│   ├── Nodes.py                  # 10 OWASP vulnerability analysis nodes
+│   ├── Push.py                   # Git push to vapt_report branch
+│   ├── Reportgen.py              # PDF report generation
+│   ├── Structfile.py             # Repository structure analyzer
+│   └── Tools.py                  # LangChain tools for file & code analysis
+│
+├── webui_fastapi/                # Web interface
+│   ├── main.py                   # FastAPI application
+│   └── index.html                # Frontend UI
+│
+├── .gitignore                    # Git ignore rules
+└── README.md                     # This file
 ```
 
 ---
